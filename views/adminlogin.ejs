@@ -1,0 +1,116 @@
+<style type="text/css">
+    .root
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .box
+    {
+        width: 800px;
+        border-radius: 10px;
+        margin-top: 30px;
+        padding: 30px;
+        box-shadow: 0px 0px 28px black;
+        
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        border: 3px solid #f1f1f1;
+    
+    
+    
+    }
+    .gap
+    {
+        margin-top: 20px;
+    
+    
+    }
+    .gapp
+    {
+        margin-top: 10px;
+    }
+    .bg
+    {
+        background-image:url("/images/bg.jpg") ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+       
+    }
+    .hl
+    {
+        margin-top:10px;
+        margin-bottom:2px;
+        height:1px;
+        width:100%;
+        border-top:1px solid #fff;
+    }
+    </style>
+
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src="/javascripts/project.js">
+    </script>
+
+    
+    <title>
+        Admin Login
+    </title>
+
+    <body class="bg">
+        <form action="/marksheetadmin/checklogin" method="post">
+    
+        <div class="root">
+        
+            <div class="box">
+                <div class="row">
+                    <div style="padding-left: 260px;font-size: 28px;color:  #fff;font-weight: bolder;letter-spacing: 2px;font-family: Lucida Handwriting;">
+                        <i style="font-size: 35px;" class="fas fa-user-shield"></i>
+                        Admin Login
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <img style="display: flex;justify-content: center;align-items: center;" src="/images/adminlogin.png" width="250">
+
+
+                    </div>
+                    <div class="col gap">
+
+                        <label for="inputEmail4" style="font-weight: bold;">Enter Admin ID/Email</label>
+                        <input required type="email" name="emailid" class="form-control" id="inputEmail4" placeholder="Admin ID/Email">
+
+                        <label for="inputPassword4" style="font-weight: bold;">Enter Password</label>
+                        <input required type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
+
+                        <div class="gap" style="justify-content: center;display: flex;align-items: center;">                  
+                            <button type="submit" style="width: 290px; font-weight: bold;" class="btn btn-primary">Sign in</button>
+                        </div>
+                        <div class="gap" style="font-weight: bold;">
+
+                            <%=msg %>
+                        </div>    
+                    </div>
+
+
+                </div>
+
+
+
+       
+
+
+            </div>
+
+        </div> 
+        </form>
+    </body>
+</html>

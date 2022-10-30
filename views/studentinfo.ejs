@@ -1,0 +1,455 @@
+<style type="text/css">
+    .root
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .dashboard
+    {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        padding: 20px;       
+        height: 1130px; 
+        border: 1px solid #f1f1f1;
+
+    
+    
+    
+    }
+
+
+
+    .navbar
+    {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        height: 60px;
+        border: 1px solid #f1f1f1;
+
+
+    }
+
+    .box
+    {
+        width: 900px;
+        border-radius: 10px;
+        margin-top: 30px;
+        padding: 30px;
+        box-shadow: 0px 0px 28px black;
+        
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        border: 3px solid #f1f1f1;
+    
+    
+    
+    }
+    .gap
+    {
+        margin-top: 20px;
+    
+    
+    }
+    .gapp
+    {
+        margin-top: 10px;
+    }
+    .bg
+    {
+        background-image:url("/images/bg.jpg") ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+       
+    }
+    .hl
+    {
+        margin-top:10px;
+        margin-bottom:2px;
+        height:1px;
+        width:100%;
+        border-top:1px solid #fff;
+    }
+    </style>
+
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src="/javascripts/project.js">
+    </script>
+
+    
+    <title>
+        Dashboard
+    </title>
+
+    <body class="bg">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                
+                <div style="font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+                    <i style="font-size: 35px;" class="fas fa-user-graduate"></i>
+                    Student Marksheet Management
+            </div>
+            </a>
+            <div style="margin-left: 740px;font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+                <img src="/images/<%=aresult.picture %>" style="border-radius: 30px;width: 50px;height: 50px;">
+                <%=aresult.adminname %>
+            </div>
+        </nav>
+
+        <div class="form-row">
+                              
+            <div class="form-group col-md-2" style="align-items: center;justify-content: left;font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+
+                <div class="dashboard">
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheetadmin/dashboard">Dashboard</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheet/studentinfo">Add Student Info</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheet/displayrecords">Student Records</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheet/searchbyid">Search Student</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheetadmin/logout">Logout</a></div>
+                    
+                </div>
+    
+             </div>
+    
+            <div class="form-group col-md-10" style="display: flex;align-items: center;justify-content: center;padding-left: 20px;font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src="/javascripts/project.js">
+    </script>
+
+    
+    <title>
+        Student Info
+    </title>
+
+    <body class="bg">
+        <form action="/marksheet/infosubmit" method="post" enctype="multipart/form-data">
+    
+        <div class="root">
+        
+            <div class="box">
+                <div class="row">
+                    <div style="padding-left: 230px;font-size: 28px;color:  #fff;font-weight: bolder;letter-spacing: 2px;font-family: Lucida Handwriting;">
+                        <i style="font-size: 35px;" class="fas fa-user-graduate"></i>
+                        Enter Student's Info
+                    </div>
+
+                    <div style="display: flex;justify-content: right;align-items: center;width: 200;">
+                        <a style="font-weight: bold" class="btn btn-outline-light" href="/marksheet/displayrecords" role="button">Show Records</a>
+    
+                    </div>
+
+                </div>    
+                <div class="row">
+                    <div class="col gapp">
+                        
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Student's Name
+                            <i style="padding: 5px;" class="fas fa-file-signature"></i>
+                        </div>
+
+                        <input required id="sname" name="sname" class="form-control" type="text" placeholder="Student's Name">
+                        
+                    </div>
+                    <div class="col gapp">
+                        
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Father's Name
+                            <i style="padding: 5px;" class="far fa-address-book"></i>
+                        </div>
+
+                        <input required id="fname" name="fname" class="form-control" type="text" placeholder="Father's Name">
+                    
+                    </div>
+                
+                </div>
+
+                <div class="row">
+                    <div class="col gapp">
+                        
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Roll Number
+                            <i style="padding: 5px;" class="fas fa-user-tag"></i>
+                            
+                        </div>
+
+                        <input required id="rollno" name="rollno" class="form-control" type="text" placeholder="Roll Number">
+
+                    </div>
+                    <div class="col gapp">
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Gender
+                            <i style="padding: 5px;font-size: 15px;" class="fas fa-venus-mars"></i>
+                            
+                        </div>
+
+                            <select required id="gender" name="gender" class="form-control">
+                                <option>-Select Gender-</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                                <option>Prefer Not To Say</option>    
+                            </select>
+                        
+                    </div>
+                    <div class="col gapp">
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter D.O.B
+                            <i style="padding: 5px;" class="fas fa-calendar-alt"></i>
+                            
+                        </div>
+                        <input required id="dob" name="dob" class="form-control" type="date">
+
+
+                    </div>
+                
+                </div>
+                <div class="row">
+                    <div class="col gapp">
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter School's Name
+                            <i style="padding: 5px;" class="fas fa-school"></i>
+                            
+                        </div>
+
+                        <input required id="school" name="school" class="form-control" type="text" placeholder="School's Name">
+
+                    
+                    </div>
+
+                    <div class="col gapp">
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter State
+                            <i style="padding: 5px;" class="fas fa-satellite"></i>
+                            
+                        </div>
+
+                        <select required id="states" name="states" class="form-control">
+                            
+                            
+
+                        </select>
+                    
+                    </div>
+                    <div class="col gapp">
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter City
+                            <i style="padding: 5px;" class="fas fa-city"></i>
+                            
+                        </div>
+
+                        <select required id="cities" name="cities" class="form-control">
+                            <option>-Select City-</option>
+                            
+                        </select>
+                    
+                    </div>
+                    
+                </div>
+                <div class="row">
+
+                    <div class="col gapp">
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Address
+                            <i style="padding: 5px;" class="fas fa-map-marked"></i>
+                            
+                        </div> 
+                        <input required id="address" name="address" class="form-control" type="text" placeholder="Enter Address">
+                    </div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Upload Picture
+                            <i style="padding: 5px;" class="fas fa-image"></i>
+                            
+                        </div> 
+                        <input required id="picture" name="picture" type="file" class="form-control">
+
+                    </div>
+  
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="root">
+
+            <div class="box">
+
+                <div class="row">
+                    <div style="padding-left: 230px;font-size: 28px;color:  #fff;font-weight: bolder;letter-spacing: 2px;font-family: Lucida Handwriting;">
+                        <i style="font-size: 35px;" class="fas fa-poll"></i>
+                        Enter Student's Marks
+                    </div>
+                </div>   
+                <div class="row">
+                    
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Physics
+                            <i style="padding: 5px;" class="fas fa-book-open"></i>
+                            
+                        </div> 
+                        <input required id="pcode" name="pcode" class="form-control" type="text" placeholder="Physics Subject Code">
+
+                    </div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Physics Marks
+                            <i style="padding: 5px;" class="fas fa-poll-h"></i>
+                            
+                        </div> 
+                        <input required id="pmarks" name="pmarks" class="form-control" type="text" placeholder="Physics Marks (XX/100) ">
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="hl"></div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Chemistry
+                            <i style="padding: 5px;" class="fas fa-book-open"></i>
+                            
+                        </div> 
+                        <input required id="ccode" name="ccode" class="form-control" type="text" placeholder="Chemistry Subject Code">
+
+                    </div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Chemistry Marks
+                            <i style="padding: 5px;" class="fas fa-poll-h"></i>
+                            
+                        </div> 
+                        <input required id="cmarks" name="cmarks" class="form-control" type="text" placeholder="Chemistry Marks (XX/100) ">
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="hl"></div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Maths
+                            <i style="padding: 5px;" class="fas fa-book-open"></i>
+                            
+                        </div> 
+                        <input required id="mcode" name="mcode" class="form-control" type="text" placeholder="Maths Subject Code">
+
+                    </div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Maths Marks
+                            <i style="padding: 5px;" class="fas fa-poll-h"></i>
+                            
+                        </div> 
+                        <input required id="mmarks" name="mmarks" class="form-control" type="text" placeholder="Maths Marks (XX/100) ">
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="hl"></div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            English
+                            <i style="padding: 5px;" class="fas fa-book-open"></i>
+                            
+                        </div> 
+                        <input required id="ecode" name="ecode" class="form-control" type="text" placeholder="English Subject Code">
+
+                    </div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter English Marks
+                            <i style="padding: 5px;" class="fas fa-poll-h"></i>
+                            
+                        </div> 
+                        <input required id="emarks" name="emarks" class="form-control" type="text" placeholder="English Marks (XX/100) ">
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="hl"></div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Hindi
+                            <i style="padding: 5px;" class="fas fa-book-open"></i>
+                            
+                        </div> 
+                        <input required id="hcode" name="hcode" class="form-control" type="text" placeholder="Hindi Subject Code">
+
+                    </div>
+                    <div class="col gapp">
+
+                        <div style="font-size: 14px;color:  #fff;font-weight: bolder;">
+                            Enter Hindi Marks
+                            <i style="padding: 5px;" class="fas fa-poll-h"></i>
+                            
+                        </div> 
+                        <input required id="hmarks" name="hmarks" class="form-control" type="text" placeholder="Hindi Marks (XX/100) ">
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="root">
+            <div class="box">
+                <div class="row">
+                    <div class="col" style="display: flex; justify-content: center; align-items: center;">
+                        <button type="reset" style="width: 400px;" class="btn btn-warning">Reset</button>
+                    </div>
+                    <div class="col" style="display: flex; justify-content: center; align-items: center;">
+                        <button type="submit" style="width: 400px;" class="btn btn-success">Submit</button>
+                    </div>
+
+                </div>
+                <div class="row gap" >
+                    <div class="col" style="display: flex; justify-content: center; align-items: center;font-size: 28px;color:  #fff;font-weight: bolder;letter-spacing: 2px;font-family: Lucida Handwriting;">
+                    <h3><%=message %></h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div> 
+        </form>
+    </body>
+</div>
+    
+    
+</div>
+
+</body>
+
+
+
+
+
+</html>

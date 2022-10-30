@@ -1,0 +1,242 @@
+<style type="text/css">
+    .root
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .box
+    {
+        width: 1100px;
+        border-radius: 10px;
+        margin-top: 30px;
+        padding: 30px;
+        box-shadow: 0px 0px 28px black;
+        
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        border: 3px solid #f1f1f1;
+    
+    
+    
+    }
+    .dashboard
+    {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        padding: 20px;       
+        height: 630px; 
+        border: 1px solid #f1f1f1;
+
+    
+    
+    
+    }
+
+
+
+    .navbar
+    {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        height: 60px;
+        border: 1px solid #f1f1f1;
+
+
+    }
+
+    .gap
+    {
+        margin-top: 20px;
+    
+    
+    }
+    .gapp
+    {
+        margin-top: 10px;
+    }
+    .bg
+    {
+        background-image:url("/images/bg.jpg") ;
+        background-repeat: no-repeat;
+        background-size: 1600px 1200px;
+       
+    }
+    .hl
+    {
+        margin-top:10px;
+        margin-bottom:2px;
+        height:1px;
+        width:100%;
+        border-top:1px solid #fff;
+    }
+    .font
+    {
+        color: #fff;
+        font-family:Serif;
+    }
+
+    </style>
+
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src="/javascripts/project.js">
+    </script>
+
+    
+    <title>
+        Dashboard
+    </title>
+
+    <body class="bg">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                
+                <div style="font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+                    <i style="font-size: 35px;" class="fas fa-user-graduate"></i>
+                    Student Marksheet Management
+            </div>
+            </a>
+            <div style="margin-left: 740px;font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+                <img src="/images/<%=aresult.picture %>" style="border-radius: 30px;width: 50px;height: 50px;">
+                <%=aresult.adminname %>
+            </div>
+        </nav>
+
+        <div class="form-row">
+                              
+            <div class="form-group col-md-2" style="display: flex;align-items: center;justify-content: left;font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+
+                <div class="dashboard">
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheetadmin/dashboard">Dashboard</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheet/studentinfo">Add Student Info</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheet/displayrecords">Student Records</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheet/searchbyid">Search Student</a></div>
+                    <div><a type="button" style="background-color:transparent;font-size: 16px;color: #fff;width: 100px;width: 178px;" class="btn" href="/marksheetadmin/logout">Logout</a></div>
+                    
+                </div>
+    
+             </div>
+    
+            <div class="form-group col-md-10" style="align-items: center;justify-content: center;padding-left: 20px;font-size: 24px;color: #fff;font-weight: bolder;letter-spacing: 2px;">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src="/javascripts/project.js">
+    </script>
+
+    
+    <title>
+        Display Records
+    </title>
+
+    <body class="bg">
+
+        <div class="root">
+        
+            <div class="box">
+                <div class="row">
+                    <div style="padding-left: 300px;font-size: 28px;color:  #fff;font-weight: bolder;letter-spacing: 2px;font-family: Lucida Handwriting;">
+                        <i style="font-size: 35px;" class="fas fa-user-graduate"></i>
+                        Student's Records
+                    </div>
+
+                    <div style="display: flex;justify-content: right;align-items: center;width: 400;">
+                        <a style="font-weight: bold" class="btn btn-outline-light" href="/marksheet/studentinfo" role="button">Enter New Student Info</a>
+    
+                    </div>
+
+
+                </div>
+
+                <table class="table gap font">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Student's Name</th>
+                            <th scope="col">Father's Name</th>
+                            <th scope="col">Roll No.</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">D.O.B</th>
+                            <th scope="col">School's Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">State</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Photo ID</th>
+                            <th scope="col">Expand Record</th>
+                       
+                        </tr>
+    
+                    </thead>
+                    <tbody>
+                        <% if(result) { 
+    
+                            result.map((item)=>{ %>
+                                
+                                <tr>
+                                    <th scope="row"><%=item.studentid %></th>
+                                
+                                    <td><%=item.studentname %></td>
+                                    <td><%=item.fathersname %></td>
+                                    <td><%=item.rollno %></td>
+                                    <td><%=item.gender %></td>
+                                    <td><%=item.dob %></td>
+                                    <td><%=item.schoolname %></td>
+                                    <td><%=item.address %></td>
+                                    <td><%=item.sn %></td>
+                                    <td><%=item.cn %></td>
+                                    <td><img src='/images/<%=item.picture %>' width="40"></td>
+                                    <th>
+                                        
+                                        <a style="font-weight: bold" class="btn btn-outline-light" href="/marksheet/displaybyid?sid=<%=item.studentid %>" role="button">Expand</a>
+                    
+                                        
+                                    </th>
+                                </tr>    
+                            
+                    
+                        <% }) } else { %>   
+                            
+                            <h1><%=msg %></h1>
+                    
+                        <% } %>
+
+
+
+
+
+                    </tbody>
+                </table>
+                
+                
+
+
+
+
+
+
+
+            </div>
+        </div>        
+
+    
+    
+    
+    
+    
+    </body>
+
+</div>
+    
+    
+</div>
+
+</body>
+</html>
